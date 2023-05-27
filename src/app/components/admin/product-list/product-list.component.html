@@ -1,0 +1,25 @@
+<div class="text-center">
+    <h1>Admin Product List</h1>
+</div>
+
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pro of products, index as i">
+            <td>{{i + 1}}</td>
+            <td>{{pro.name}}</td>
+            <td><img src="{{pro.image}}" alt="anh" width="100px"></td>
+            <td>
+                <button class="btn btn-danger" (click)="deletePro(pro.id)">Delete</button>
+                <button class="btn btn-warning" routerLink="/admin/product/{{pro.id}}/edit">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
